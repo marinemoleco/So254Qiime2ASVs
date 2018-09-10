@@ -1,0 +1,307 @@
+#SampleID	Date	Pooled	Family	GenusSpecies	SampleType	SampleIDcopy
+Sed_ROV03_1	2017	Sed_ROV03	Sed_ROV03_1	Sed_ROV03_1	Sediment	Sed_ROV03_1
+Sed_ROV03_2	2017	Sed_ROV03	Sed_ROV03_2	Sed_ROV03_2	Sediment	Sed_ROV03_2
+Sed_ROV03_3	2017	Sed_ROV03	Sed_ROV03_3	Sed_ROV03_3	Sediment	Sed_ROV03_3
+Sed_ROV06_1	2017	Sed_ROV06	Sed_ROV06_1	Sed_ROV06_1	Sediment	Sed_ROV06_1
+Sed_ROV06_2	2017	Sed_ROV06	Sed_ROV06_2	Sed_ROV06_2	Sediment	Sed_ROV06_2
+Sed_ROV06_3	2017	Sed_ROV06	Sed_ROV06_3	Sed_ROV06_3	Sediment	Sed_ROV06_3
+SED_ROV12_1	2017	Sed_ROV12	Sed_ROV12_1	Sed_ROV12_1	Sediment	Sed_ROV12_1
+SED_ROV12_2	2017	Sed_ROV12	Sed_ROV12_2	Sed_ROV12_2	Sediment	Sed_ROV12_2
+SED_ROV12_3	2017	Sed_ROV12	Sed_ROV12_3	Sed_ROV12_3	Sediment	Sed_ROV12_3
+SED_ROV14_1	2017	Sed_ROV14	Sed_ROV14_1	Sed_ROV14_1	Sediment	Sed_ROV14_1
+SED_ROV14_2	2017	Sed_ROV14	Sed_ROV14_2	Sed_ROV14_2	Sediment	Sed_ROV14_2
+SED_ROV14_3	2017	Sed_ROV14	Sed_ROV14_3	Sed_ROV14_3	Sediment	Sed_ROV14_3
+SED_ROV15_1	2017	Sed_ROV15	Sed_ROV15_1	Sed_ROV15_1	Sediment	Sed_ROV15_1
+SED_ROV15_2	2017	Sed_ROV15	Sed_ROV15_2	Sed_ROV15_2	Sediment	Sed_ROV15_2
+SED_ROV15_3	2017	Sed_ROV15	Sed_ROV15_3	Sed_ROV15_3	Sediment	Sed_ROV15_3
+SED_ROV16_1	2017	Sed_ROV16	Sed_ROV16_1	Sed_ROV16_1	Sediment	Sed_ROV16_1
+SED_ROV16_2	2017	Sed_ROV16	Sed_ROV16_2	Sed_ROV16_2	Sediment	Sed_ROV16_2
+SED_ROV16_3	2017	Sed_ROV16	Sed_ROV16_3	Sed_ROV16_3	Sediment	Sed_ROV16_3
+SED_ROV18_1	2017	Sed_ROV18	Sed_ROV18_1	Sed_ROV18_1	Sediment	Sed_ROV18_1
+SED_ROV18_2	2017	Sed_ROV18	Sed_ROV18_2	Sed_ROV18_2	Sediment	Sed_ROV18_2
+SED_ROV18_3	2017	Sed_ROV18	Sed_ROV18_3	Sed_ROV18_3	Sediment	Sed_ROV18_3
+SO254_2_1	2017	SW_2	SW_2_1	SW_2_1	Seawater	SO254_2_1
+SO254_2_2	2017	SW_2	SW_2_2	SW_2_2	Seawater	SO254_2_2
+SO254_2_3	2017	SW_2	SW_2_3	SW_2_3	Seawater	SO254_2_3
+SO254_8_1	2017	SW_8	SW_8_1	SW_8_1	Seawater	SO254_8_1
+SO254_8_2	2017	SW_8	SW_8_2	SW_8_2	Seawater	SO254_8_2
+SO254_8_3	2017	SW_8	SW_8_3	SW_8_3	Seawater	SO254_8_3
+SO254_14_1	2017	SW_14	SW_14_1	SW_14_1	Seawater	SO254_14_1
+SO254_14_2	2017	SW_14	SW_14_2	SW_14_2	Seawater	SO254_14_2
+SO254_14_3	2017	SW_14	SW_14_3	SW_14_3	Seawater	SO254_14_3
+SO254_18_1	2017	SW_18	SW_18_1	SW_18_1	Seawater	SO254_18_1
+SO254_18_2	2017	SW_18	SW_18_2	SW_18_2	Seawater	SO254_18_2
+SO254_18_3	2017	SW_18	SW_18_3	SW_18_3	Seawater	SO254_18_3
+SO254_23_1	2017	SW_23	SW_23_1	SW_23_1	Seawater	SO254_23_1
+SO254_23_2	2017	SW_23	SW_23_2	SW_23_2	Seawater	SO254_23_2
+SO254_23_3	2017	SW_23	SW_23_3	SW_23_3	Seawater	SO254_23_3
+SO254_33_1	2017	SW_33	SW_33_1	SW_33_1	Seawater	SO254_33_1
+SO254_33_2	2017	SW_33	SW_33_2	SW_33_2	Seawater	SO254_33_2
+SO254_33_3	2017	SW_33	SW_33_3	SW_33_3	Seawater	SO254_33_3
+SO254_36_1	2017	SW_36	SW_36_1	SW_36_1	Seawater	SO254_36_1
+SO254_36_2	2017	SW_36	SW_36_2	SW_36_2	Seawater	SO254_36_2
+SO254_36_3	2017	SW_36	SW_36_3	SW_36_3	Seawater	SO254_36_3
+SO254_36_Kreiselpumpe_1	2017	SW_36_Kreiselpumpe	SW_36_Kreiselpumpe_1	SW_36_Kreiselpumpe_1	Seawater	SO254_36_Kreiselpumpe_1
+SO254_36_Kreiselpumpe_2	2017	SW_36_Kreiselpumpe	SW_36_Kreiselpumpe_2	SW_36_Kreiselpumpe_2	Seawater	SO254_36_Kreiselpumpe_2
+SO254_36_Kreiselpumpe_3	2017	SW_36_Kreiselpumpe	SW_36_Kreiselpumpe_3	SW_36_Kreiselpumpe_3	Seawater	SO254_36_Kreiselpumpe_3
+SO254_76_1	2017	SW_76	SW_76_1	SW_76_1	Seawater	SO254_76_1
+SO254_76_2	2017	SW_76	SW_76_2	SW_76_2	Seawater	SO254_76_2
+SO254_76_3	2017	SW_76	SW_76_3	SW_76_3	Seawater	SO254_76_3
+SO254_77_1	2017	SW_77	SW_77_1	SW_77_1	Seawater	SO254_77_1
+SO254_77_2	2017	SW_77	SW_77_2	SW_77_2	Seawater	SO254_77_2
+SO254_77_3	2017	SW_77	SW_77_3	SW_77_3	Seawater	SO254_77_3
+SO254_78_1	2017	SW_78	SW_78_1	SW_78_1	Seawater	SO254_78_1
+SO254_78_2	2017	SW_78	SW_78_2	SW_78_2	Seawater	SO254_78_2
+SO254_78_3	2017	SW_78	SW_78_3	SW_78_3	Seawater	SO254_78_3
+SO254_81_1	2017	SW_81	SW_81_1	SW_81_1	Seawater	SO254_81_1
+SO254_81_2	2017	SW_81	SW_81_2	SW_81_2	Seawater	SO254_81_2
+SO254_81_3	2017	SW_81	SW_81_3	SW_81_3	Seawater	SO254_81_3
+SO254_84_1	2017	SW_84	SW_84_1	SW_84_1	Seawater	SO254_84_1
+SO254_84_2	2017	SW_84	SW_84_2	SW_84_2	Seawater	SO254_84_2
+SO254_84_3	2017	SW_84	SW_84_3	SW_84_3	Seawater	SO254_84_3
+SO254_85_1	2017	SW_85	SW_85_1	SW_85_1	Seawater	SO254_85_1
+SO254_85_2	2017	SW_85	SW_85_2	SW_85_2	Seawater	SO254_85_2
+SO254_85_3	2017	SW_85	SW_85_3	SW_85_3	Seawater	SO254_85_3
+SO254_1_1	2017	SW_1	SW_1_1	SW_1_1	Seawater	SO254_1_1
+SO254_1_2	2017	SW_1	SW_1_2	SW_1_2	Seawater	SO254_1_2
+SO254_1_3	2017	SW_1	SW_1_3	SW_1_3	Seawater	SO254_1_3
+SO254_34_1	2017	SW_34	SW_34_1	SW_34_1	Seawater	SO254_34_1
+SO254_34_2	2017	SW_34	SW_34_2	SW_34_2	Seawater	SO254_34_2
+SO254_34_3	2017	SW_34	SW_34_3	SW_34_3	Seawater	SO254_34_3
+NZ-001	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-001	Sponge	NZ-001
+NZ-002	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-002	Sponge	NZ-002
+NZ-004	2017	Farreidae	Farreidae	Farrea sp. 2	Sponge	NZ-004
+NZ-005	2017	Rossellidae	Rossellidae	Lophocalyx sp.	Sponge	NZ-005
+NZ-008	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-008	Sponge	NZ-008
+NZ-010	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-010	Sponge	NZ-010
+NZ-011	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-011	Sponge	NZ-011
+NZ-012	2017	Euplectellidae	Euplectellidae	Saccocalyx n. sp.	Sponge	NZ-012
+NZ-013	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-013	Sponge	NZ-013
+NZ-014	2017	Rossellidae	Rossellidae	Lophocalyx sp.	Sponge	NZ-014
+NZ-015	2017	Farreidae	Farreidae	Farrea sp. 3	Sponge	NZ-015
+NZ-016	2017	Rossellidae	Rossellidae	Rossellinae indet.	Sponge	NZ-016
+NZ-017	2017	Aulocalycidae	Aulocalycidae	Aulocalyx serialis	Sponge	NZ-017
+NZ-019	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-019	Sponge	NZ-019
+NZ-020	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-020	Sponge	NZ-020
+NZ-028	2017	Euretidae	Euretidae	Eurete sp. 1	Sponge	NZ-028
+NZ-029	2017	Euplectellidae	Euplectellidae	Saccocalyx n. sp.	Sponge	NZ-029
+NZ-030	2017	Euplectellidae	Euplectellidae	Amphidiscella n. sp. 1	Sponge	NZ-030
+NZ-031	2017	Euplectellidae	Euplectellidae	Amphidiscella n. sp. 1	Sponge	NZ-031
+NZ-032	2017	Euplectellidae	Euplectellidae	Amphidiscella n. sp. 1	Sponge	NZ-032
+NZ-033	2017	Euplectellidae	Euplectellidae	Amphidiscella n. sp. 1	Sponge	NZ-033
+NZ-034	2017	Euplectellidae	Euplectellidae	Amphidiscella n. sp. 2	Sponge	NZ-034
+NZ-035	2017	Euplectellidae	Euplectellidae	Bolosominae n. gen. 2	Sponge	NZ-035
+NZ-037	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-037	Sponge	NZ-037
+NZ-038	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-038	Sponge	NZ-038
+NZ-026_1	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-026_1	Sponge	NZ-026_1
+NZ-040	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-040	Sponge	NZ-040
+NZ-041	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-041	Sponge	NZ-041
+NZ-042	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-042	Sponge	NZ-042
+NZ-043	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-043	Sponge	NZ-043
+NZ-045	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-045	Sponge	NZ-045
+NZ-046	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-046	Sponge	NZ-046
+NZ-047	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-047	Sponge	NZ-047
+NZ-048	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-048	Sponge	NZ-048
+NZ-049	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-049	Sponge	NZ-049
+NZ-050	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-050	Sponge	NZ-050
+NZ-062	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-062	Sponge	NZ-062
+NZ-065	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-065	Sponge	NZ-065
+NZ-083	2017	Aulocalycidae	Aulocalycidae	Rhabdodictyum n. sp.	Sponge	NZ-083
+NZ-84	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-84	Sponge	NZ-84
+NZ-85	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-85	Sponge	NZ-85
+NZ-120	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-120	Sponge	NZ-120
+NZ-121	2017	Euplectellidae	Euplectellidae	Bolosoma sp.	Sponge	NZ-121
+NZ-122	2017	Euplectellidae	Euplectellidae	Regadrella sp. 2	Sponge	NZ-122
+NZ-123	2017	Euplectellidae	Euplectellidae	Regadrella sp. 2	Sponge	NZ-123
+NZ-124	2017	Euplectellidae	Euplectellidae	Dictyaulus n. sp.	Sponge	NZ-124
+NZ-125	2017	Euplectellidae	Euplectellidae	Bolosominae n. gen. 3 sp. 1	Sponge	NZ-125
+NZ-128	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-128	Sponge	NZ-128
+NZ-129	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-129	Sponge	NZ-129
+NZ-130	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-130	Sponge	NZ-130
+NZ-133	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-133	Sponge	NZ-133
+NZ-135	2017	Pheronematidae	Pheronematidae	Pheronema sp.	Sponge	NZ-135
+NZ-136	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-136	Sponge	NZ-136
+NZ-137	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-137	Sponge	NZ-137
+NZ-138	2017	Pheronematidae	Pheronematidae	Pheronema sp.	Sponge	NZ-138
+NZ-153	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-153	Sponge	NZ-153
+NZ-158	2017	Leucopsacidae	Leucopsacidae	Leucopsacus distantus	Sponge	NZ-158
+NZ-159	2017	Rossellidae	Rossellidae	Bathydorus sp. 1	Sponge	NZ-159
+NZ-160	2017	Rossellidae	Rossellidae	Bathydorus sp. 2	Sponge	NZ-160
+NZ-161	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-161	Sponge	NZ-161
+NZ-162	2017	Euplectellidae	Euplectellidae	Regadrella n. sp. 1	Sponge	NZ-162
+NZ-163	2017	Euplectellidae	Euplectellidae	Regadrella n. sp. 1	Sponge	NZ-163
+NZ-164	2017	Euplectellidae	Euplectellidae	Regadrella n. sp. 1	Sponge	NZ-164
+NZ-165	2017	Euplectellidae	Euplectellidae	Regadrella n. sp. 1	Sponge	NZ-165
+NZ-166	2017	Euplectellidae	Euplectellidae	Regadrella okinoseana	Sponge	NZ-166
+NZ-168	2017	Euplectellidae	Euplectellidae	Regadrella n. sp. 1	Sponge	NZ-168
+NZ-169	2017	Rossellidae	Rossellidae	Lanuginellinae indet.	Sponge	NZ-169
+NZ-170	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-170	Sponge	NZ-170
+NZ-176	2017	Aulocalycidae	Aulocalycidae	Aulocalyx n. sp.	Sponge	NZ-176
+NZ-220	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-220	Sponge	NZ-220
+NZ-221	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-221	Sponge	NZ-221
+NZ-237	2017	Rossellidae	Rossellidae	Scyphidium australiense	Sponge	NZ-237
+NZ-240	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-240	Sponge	NZ-240
+NZ-241	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-241	Sponge	NZ-241
+NZ-254	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-254	Sponge	NZ-254
+NZ-273	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-273	Sponge	NZ-273
+NZ-274	2017	Rossellidae	Rossellidae	Scyphidium australiense	Sponge	NZ-274
+NZ-275	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-275	Sponge	NZ-275
+NZ-276	2017	Euretidae	Euretidae	Eurete sp. 2	Sponge	NZ-276
+NZ-278	2017	Farreidae	Farreidae	Farrea mexicana	Sponge	NZ-278
+NZ-279	2017	Rossellidae	Rossellidae	Scyphidium australiense	Sponge	NZ-279
+NZ-296	2017	Euplectellidae	Euplectellidae	Regadrella okinoseana	Sponge	NZ-296
+NZ-297	2017	Euplectellidae	Euplectellidae	Regadrella okinoseana	Sponge	NZ-297
+NZ-298	2017	Euplectellidae	Euplectellidae	Regadrella okinoseana	Sponge	NZ-298
+NZ-299	2017	Euplectellidae	Euplectellidae	Regadrella n. sp. 2	Sponge	NZ-299
+NZ-300	2017	Leucopsacidae	Leucopsacidae	Leucopsacus distantus	Sponge	NZ-300
+NZ-301	2017	Aulocalycidae	Aulocalycidae	Aulocalyx n. sp.	Sponge	NZ-301
+NZ-302	2017	Rossellidae	Rossellidae	Lanuginellinae indet.	Sponge	NZ-302
+NZ-303	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-303	Sponge	NZ-303
+NZ-304	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-304	Sponge	NZ-304
+NZ-305	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-305	Sponge	NZ-305
+NZ-306	2017	Euplectellidae	Euplectellidae	Bolosominae n. gen. 3 sp. 2	Sponge	NZ-306
+NZ-310	2017	Rossellidae	Rossellidae	Lanuginellinae indet.	Sponge	NZ-310
+NZ-311	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-311	Sponge	NZ-311
+NZ-312	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-312	Sponge	NZ-312
+NZ-314	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-314	Sponge	NZ-314
+NZ-315	2017	Rossellidae	Rossellidae	Lanuginellinae indet.	Sponge	NZ-315
+NZ-316	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-316	Sponge	NZ-316
+NZ-317	2017	Leucopsacidae	Leucopsacidae	Leucopsacus distantus	Sponge	NZ-317
+NZ-318	2017	Aulocalycidae	Aulocalycidae	Aulocalyx n. sp.	Sponge	NZ-318
+NZ-319	2017	Rossellidae	Rossellidae	Lanuginellinae indet.	Sponge	NZ-319
+NZ-321	2017	Euplectellidae	Euplectellidae	Saccocalyx n. sp.	Sponge	NZ-321
+NZ-322	2017	Euplectellidae	Euplectellidae	Saccocalyx n. sp.	Sponge	NZ-322
+NZ-323	2017	Euplectellidae	Euplectellidae	Saccocalyx n. sp.	Sponge	NZ-323
+NZ-324	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-324	Sponge	NZ-324
+NZ-325	2017	Leucopsacidae	Leucopsacidae	Chaunoplectella n. sp.	Sponge	NZ-325
+NZ-326	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-326	Sponge	NZ-326
+NZ-337	2017	Pheronematidae	Pheronematidae	Poliopogon n. sp.	Sponge	NZ-337
+NZ-338	2017	Rossellidae	Rossellidae	Caulophacus (Caulophacus) discohexactinus	Sponge	NZ-338
+NZ-339	2017	Euplectellidae	Euplectellidae	Bolosoma cyanae	Sponge	NZ-339
+NZ-340	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-340	Sponge	NZ-340
+NZ-341	2017	Euplectellidae	Euplectellidae	Bolosoma cyanae	Sponge	NZ-341
+NZ-342	2017	Rossellidae	Rossellidae	Caulophacus (Caulophacus) discohexaster	Sponge	NZ-342
+NZ-343	2017	Rossellidae	Rossellidae	Caulophacus (Caulophacus) discohexaster	Sponge	NZ-343
+NZ-345	2017	Farreidae	Farreidae	Farrea sp. 4	Sponge	NZ-345
+NZ-346	2017	Euplectellidae	Euplectellidae	Bolosoma cyanae	Sponge	NZ-346
+NZ-347	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-347	Sponge	NZ-347
+NZ-348	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-348	Sponge	NZ-348
+NZ-349	2017	Aulocalycidae	Aulocalycidae	Aulocalyx serialis	Sponge	NZ-349
+NZ-350	2017	Euplectellidae	Euplectellidae	Regadrella sp. 2	Sponge	NZ-350
+NZ-006	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-006	Sponge	NZ-006
+NZ-007	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-007	Sponge	NZ-007
+NZ-026_2	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-026_2	Sponge	NZ-026_2
+NZ-051	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-051	Sponge	NZ-051
+NZ-052	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-052	Sponge	NZ-052
+NZ-058	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-058	Sponge	NZ-058
+NZ-059	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-059	Sponge	NZ-059
+NZ-061	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-061	Sponge	NZ-061
+NZ-064	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-064	Sponge	NZ-064
+NZ-073	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-073	Sponge	NZ-073
+NZ-109	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-109	Sponge	NZ-109
+NZ-110	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-110	Sponge	NZ-110
+NZ-111	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-111	Sponge	NZ-111
+NZ-112	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-112	Sponge	NZ-112
+NZ-113	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-113	Sponge	NZ-113
+NZ-114	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-114	Sponge	NZ-114
+NZ-115	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-115	Sponge	NZ-115
+NZ-116	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-116	Sponge	NZ-116
+NZ-117	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-117	Sponge	NZ-117
+NZ-126	2017	Euplectellidae	Euplectellidae	Bolosoma cyanae	Sponge	NZ-126
+NZ-127	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-127	Sponge	NZ-127
+NZ-131	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-131	Sponge	NZ-131
+NZ-132	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-132	Sponge	NZ-132
+NZ-134	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-134	Sponge	NZ-134
+NZ-139	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-139	Sponge	NZ-139
+NZ-140	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-140	Sponge	NZ-140
+NZ-157_1	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-157_1	Sponge	NZ-157_1
+NZ-167	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-167	Sponge	NZ-167
+NZ-188	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-188	Sponge	NZ-188
+NZ-200	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-200	Sponge	NZ-200
+NZ-201	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-201	Sponge	NZ-201
+NZ-202	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-202	Sponge	NZ-202
+NZ-203	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-203	Sponge	NZ-203
+NZ-204	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-204	Sponge	NZ-204
+NZ-205	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-205	Sponge	NZ-205
+NZ-206	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-206	Sponge	NZ-206
+NZ-207	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-207	Sponge	NZ-207
+NZ-208	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-208	Sponge	NZ-208
+NZ-209	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-209	Sponge	NZ-209
+NZ-210	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-210	Sponge	NZ-210
+NZ-211	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-211	Sponge	NZ-211
+NZ-212	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-212	Sponge	NZ-212
+NZ-213	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-213	Sponge	NZ-213
+NZ-214	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-214	Sponge	NZ-214
+NZ-215	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-215	Sponge	NZ-215
+NZ-216	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-216	Sponge	NZ-216
+NZ-217	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-217	Sponge	NZ-217
+NZ-218	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-218	Sponge	NZ-218
+NZ-219	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-219	Sponge	NZ-219
+NZ-222	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-222	Sponge	NZ-222
+NZ-223	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-223	Sponge	NZ-223
+NZ-224	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-224	Sponge	NZ-224
+NZ-225	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-225	Sponge	NZ-225
+NZ-226	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-226	Sponge	NZ-226
+NZ-227	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-227	Sponge	NZ-227
+NZ-228	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-228	Sponge	NZ-228
+NZ-229	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-229	Sponge	NZ-229
+NZ-230	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-230	Sponge	NZ-230
+NZ-231	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-231	Sponge	NZ-231
+NZ-238	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-238	Sponge	NZ-238
+NZ-239	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-239	Sponge	NZ-239
+NZ-242	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-242	Sponge	NZ-242
+NZ-243	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-243	Sponge	NZ-243
+NZ-244	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-244	Sponge	NZ-244
+NZ-246	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-246	Sponge	NZ-246
+NZ-247	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-247	Sponge	NZ-247
+NZ-248	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-248	Sponge	NZ-248
+NZ-249	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-249	Sponge	NZ-249
+NZ-250	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-250	Sponge	NZ-250
+NZ-251	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-251	Sponge	NZ-251
+NZ-252	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-252	Sponge	NZ-252
+NZ-253	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-253	Sponge	NZ-253
+NZ-255	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-255	Sponge	NZ-255
+NZ-256	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-256	Sponge	NZ-256
+NZ-257	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-257	Sponge	NZ-257
+NZ-258	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-258	Sponge	NZ-258
+NZ-259	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-259	Sponge	NZ-259
+NZ-260	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-260	Sponge	NZ-260
+NZ-307	2017	Farreidae	Farreidae	Farrea occa occa	Sponge	NZ-307
+NZ-344	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-344	Sponge	NZ-344
+NZ-351	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-351	Sponge	NZ-351
+NZ-157_2	2017	unclassified sponge	unclassified sponge	unclassified Sponge NZ-157_2	Sponge	NZ-157_2
+NIWA127200	2017	NIWA	NIWA	NIWA	NIWA	NIWA127200
+NIWA127224	2017	NIWA	NIWA	NIWA	NIWA	NIWA127224
+NIWA127239	2017	NIWA	NIWA	NIWA	NIWA	NIWA127239
+NIWA127245	2017	NIWA	NIWA	NIWA	NIWA	NIWA127245
+Tanja5A	2017	Tanja	Tanja5A	Tanja5A	Tanja	Tanja5A
+Tanja5B	2017	Tanja	Tanja5B	Tanja5B	Tanja	Tanja5B
+Tanja5C	2017	Tanja	Tanja5C	Tanja5C	Tanja	Tanja5C
+PS-1069	2017	Sponge	PS-1069	PS-1069	Sponge	PS-1069
+Tanja_K_C1	2017	Tanja	Tanja_K_C1	Tanja_K_C1	Tanja	Tanja_K_C1
+Tanja_K_C2	2017	Tanja	Tanja_K_C2	Tanja_K_C2	Tanja	Tanja_K_C2
+Tanja_K_C3	2017	Tanja	Tanja_K_C3	Tanja_K_C3	Tanja	Tanja_K_C3
+Tanja6_1	2017	Tanja	Tanja6_1	Tanja6_1	Tanja	Tanja6_1
+Tanja6_2	2017	Tanja	Tanja6_2	Tanja6_2	Tanja	Tanja6_2
+Tanja6_3	2017	Tanja	Tanja6_3	Tanja6_3	Tanja	Tanja6_3
+Mock1	2017	Mock	Mock1	Mock1	Mock	Mock1
+Mock2	2017	Mock	Mock2	Mock2	Mock	Mock2
+Mock3	2017	Mock	Mock3	Mock3	Mock	Mock3
+Mock4	2017	Mock	Mock4	Mock4	Mock	Mock4
+NTC2	2017	NC	NTC2	NTC2	NC	NTC2
+NTC3	2017	NC	NTC3	NTC3	NC	NTC3
+NTC4	2017	NC	NTC4	NTC4	NC	NTC4
+NTC5	2017	NC	NTC5	NTC5	NC	NTC5
+NTC6	2017	NC	NTC6	NTC6	NC	NTC6
+NTC7	2017	NC	NTC7	NTC7	NC	NTC7
+NTC8	2017	NC	NTC8	NTC8	NC	NTC8
+NTC1	2017	NC	NTC1	NTC1	NC	NTC1
+P2	2017	PosC	P2	P2	PosC	P2
+P3	2017	PosC	P3	P3	PosC	P3
+P4	2017	PosC	P4	P4	PosC	P4
+P5	2017	PosC	P5	P5	PosC	P5
+P6	2017	PosC	P6	P6	PosC	P6
+P7	2017	PosC	P7	P7	PosC	P7
+P8	2017	PosC	P8	P8	PosC	P8
+P1	2017	PosC	P1	P1	PosC	P1
+
