@@ -1,0 +1,37 @@
+## Step 0 - create your primer specific classifier - read the link below to learn why ##
+
+# https://docs.qiime2.org/2018.6/tutorials/feature-classifier/
+
+# 1. download the newest silva files
+# QIIME-compatible SILVA releases, as well as the licensing information for commercial and non-commercial use, are available at https://www.arb-silva.de/download/archive/qiime.
+# https://www.arb-silva.de/fileadmin/silva_databases/qiime/Silva_132_release.zip
+# the qiime compatible release contains many files - I picked the following files
+# fasta file: rep_set/rep_set_16S_only/99
+# and
+# taxonomy: taxonomy/16S_only/99/consensus_taxonomy_7_levels.txt
+
+qiime tools import \
+ --type 'FeatureData[Sequence]' \
+ --input-path silva_132_99_16S.fasta \
+ --output-path silva_132_99_16S.qza
+
+# I updated the silva taxonomy_7_levels file - my version is in the "0_training_silva_classifier" folder
+# it's compressed to save some github space
+
+qiime tools import \
+ --type 'FeatureData[Taxonomy]' \
+ --source-format HeaderlessTSVTaxonomyFormat \
+ --input-path taxonomy_7_levels.txt \
+ --output-path silva132-ref-taxonomy.qza
+
+qiime feature-classifier extract-reads \
+ --i-sequences silva_132_99_16S.qza \
+ --p-f-primer CCTACGGGAGGCAGCAG \
+ --p-r-primer GGACTACHVGGGTWTCTAAT \
+ --o-reads silva132V3V4-ref-seqs.qza
+
+qiime feature-classifier fit-classifier-naive-bayes \
+ --i-reference-reads silva132V3V4-ref-seqs.qza \
+ --i-reference-taxonomy silva132-ref-taxonomy.qza \
+ --o-classifier Silva132V3V4-classifier.qza
+
