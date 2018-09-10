@@ -1,30 +1,37 @@
-## quality filtering using bbduk
-## https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/
-## http://seqanswers.com/forums/showthread.php?t=42776
+## Step 1 - quality filtering ##
 
-## bbduk script
+# quality filtering using bbduk
+# https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/
+# http://seqanswers.com/forums/showthread.php?t=42776
+
+# bbduk script: bbduk_trim.sh
 for i in `ls -1 *_R1_001.fastq.gz | sed 's/_R1_001.fastq.gz//'`
 do
 ~/work/bbmap/bbduk.sh -Xmx1g in1=$i\_R1_001.fastq.gz in2=$i\_R2_001.fastq.gz out1=$i\_bbduk_R1_001.fastq.gz out2=$i\_bbduk_R2_001.fastq.gz qtrim=rl trimq=20  minlen=250
 done
 
-## rename bbduk fastq files bash command
-## I could also use the new names, but then I would need to change my manifest file and I don't want to do that
+# rename bbduk fastq files bash command
+# I could also use the new names, but then I would need to change my manifest file and I don't want to do that
 rename 's/bbduk_//g' *
 
-## start qiime2
+
+
+## Step 2 - qiime2 ##
+
+# start qiime2
 source activate qiime2-2018.6
 
-## import data
-## https://docs.qiime2.org/2018.8/tutorials/importing/
+# import sequence fastq data
+# https://docs.qiime2.org/2018.8/tutorials/importing/
 qiime tools import \
  --type 'SampleData[PairedEndSequencesWithQuality]' \
  --input-path pe-33-manifest \
  --output-path bbduk-paired-end-demux.qza \
  --source-format PairedEndFastqManifestPhred33
 
-#https://docs.qiime2.org/2018.6/tutorials/atacama-soils/
-#https://forum.qiime2.org/t/dada2-truncation-lengths-and-features-number/1940/9
+# DADA2 denoising -> create dada2 based ASVs
+# https://docs.qiime2.org/2018.6/tutorials/atacama-soils/
+# https://forum.qiime2.org/t/dada2-truncation-lengths-and-features-number/1940/9
 qiime dada2 denoise-paired \
  --i-demultiplexed-seqs bbduk-paired-end-demux.qza \
  --p-trim-left-f 13 \
