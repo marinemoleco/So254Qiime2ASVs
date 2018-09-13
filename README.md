@@ -5,3 +5,6 @@ Folders contain files necessary or derived from the commands and scripts mention
 log file and folder numbers imply their order in this "pipeline"
 
 Update 8:15 13.09.2018 - updated dada2 log, added deblur log, new metadata and manifest files for deblur
+
+to do: change method specific files names to general file names to make the qiime2 commands interchangeable
+to do: curate metadata
