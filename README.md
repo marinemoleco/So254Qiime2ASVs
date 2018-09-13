@@ -13,3 +13,5 @@ log file and folder numbers imply their order in this "pipeline"
 - change method specific files names to general file names to make the qiime2 commands interchangeable
 - curate metadata
 - add OTU clustering
+- alpha diversity
+- beta diversity
