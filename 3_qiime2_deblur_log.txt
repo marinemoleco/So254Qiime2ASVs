@@ -1,0 +1,131 @@
+## Step 2 - qiime2 ##
+
+# start qiime2
+source activate qiime2-2018.6
+
+# make dir for all Deblur related output files
+mkdir deblur
+
+## note - avoid sample names with underscores - see: https://forum.qiime2.org/t/deblur-problem-duplicate-sample-ids-error/1213/6 ##
+
+# import sequence fastq data
+# https://docs.qiime2.org/2018.8/tutorials/importing/
+# because of the sampleID deblur issue above I created a new manifest file for deblur
+qiime tools import \
+ --type 'SampleData[PairedEndSequencesWithQuality]' \
+ --input-path $PWD/2_qiime2_files/deblur-pe-33-manifest \
+ --output-path $PWD/deblur/deblur-bbduk-paired-end-demux.qza \
+ --source-format PairedEndFastqManifestPhred33
+
+## 1. initial quality filtering based on q-scores
+# https://docs.qiime2.org/2018.6/plugins/available/quality-filter/q-score/
+
+qiime quality-filter q-score \
+ --i-demux $PWD/deblur/deblur-bbduk-paired-end-demux.qza \
+ --o-filtered-sequences $PWD/deblur/bbduk-paired-end-demux-filtered.qza \
+ --o-filter-stats $PWD/deblur/bbduk-paired-end-demux-filter-stats.qza
+
+# visualize filter stats
+qiime metadata tabulate \
+  --m-input-file $PWD/deblur/bbduk-paired-end-demux-filter-stats.qza \
+  --o-visualization $PWD/deblur/bbduk-paired-end-demux-filter-stats.qzv
+
+qiime tools view $PWD/deblur/bbduk-paired-end-demux-filter-stats.qzv
+
+
+## 2. deblur it!
+## https://docs.qiime2.org/2018.6/plugins/available/deblur/denoise-16S/
+
+qiime deblur denoise-16S \
+  --p-jobs-to-start 6 \
+  --i-demultiplexed-seqs $PWD/deblur/bbduk-paired-end-demux-filtered.qza \
+  --p-trim-length 200 \
+  --o-representative-sequences $PWD/deblur/rep-seqs-deblur.qza \
+  --o-table $PWD/deblur/table-deblur.qza \
+  --p-sample-stats \
+  --o-stats $PWD/deblur/deblur-stats.qza
+
+# visualize deblur stats
+qiime deblur visualize-stats \
+  --i-deblur-stats $PWD/deblur/deblur-stats.qza \
+  --o-visualization $PWD/deblur/deblur-stats.qzv
+
+qiime tools view $PWD/deblur/deblur-stats.qzv
+
+
+# Feature table - first look at your data
+# create a qiime view file
+# use a deblur specific metadata file - I had to change the sampleID names and take this into account also for the metadata sample IDs
+qiime feature-table summarize \
+ --i-table $PWD/deblur/table-deblur.qza \
+ --o-visualization $PWD/deblur/table-deblur.qzv \
+ --m-sample-metadata-file $PWD/2_qiime2_files/deblur-metadata.tsv
+
+qiime tools view $PWD/deblur/table-deblur.qzv
+
+
+## Step 3 - taxonomy assignment ##
+# all sequences will be classified and it seems that any kind of filtering will have no effect on this classification
+# hence it makes sense to classify your reads at this point - regardless of any subsequent dataset manipulation
+# on my laptop (Ubuntu, 8 threads, 16GB memory, 32GB swap, >500GB temp space) it only worked with 1 job, everything above failed ... memory or temp issue?
+
+qiime feature-classifier classify-sklearn \
+  --p-n-jobs 1 \
+  --p-reads-per-batch 1000 \
+  --i-classifier $PWD/0_training_silva_classifier/Silva132V3V4-classifier.qza \
+  --i-reads $PWD/deblur/rep-seqs-deblur.qza \
+  --o-classification $PWD/deblur/Silva132V3V4-taxonomy-deblur.qza
+
+
+## Step 4 - filtering ##
+
+# filter samples by metadata IDs - here I just want to keep the sponge, sediment, and seawater samples - I am not interested in the controls or mock or misc samples
+qiime feature-table filter-samples \
+ --i-table $PWD/dada2/dada2-table.qza \
+ --m-metadata-file $PWD/2_qiime2_files/metadata.tsv \
+ --p-where "SampleType='Sponge' OR SampleType='Sediment' OR SampleType='Seawater'" \
+ --o-filtered-table $PWD/dada2/dada2-table-SpSedSw.qza
+
+# create a qiime view file
+qiime feature-table summarize \
+ --i-table $PWD/dada2/dada2-table-SpSedSw.qza \
+ --o-visualization $PWD/dada2/dada2-table-SpSedSw.qzv \
+ --m-sample-metadata-file $PWD/2_qiime2_files/metadata.tsv
+
+# view this file
+qiime tools view $PWD/dada2/dada2-table-SpSedSw.qzv
+
+
+# filter samples by feature frequency - optional & not everyone likes that
+qiime feature-table filter-features \
+ --i-table $PWD/dada2/dada2-table-SpSedSw.qza \
+ --p-min-frequency 5 \
+ --o-filtered-table $PWD/dada2/dada2-table-SpSedSw.min5.qza
+
+# filter samples by read count
+qiime feature-table filter-samples \
+ --i-table $PWD/dada2/dada2-table-SpSedSw.min5.qza \
+ --p-min-frequency 1500 \
+ --o-filtered-table $PWD/dada2/dada2-table-SpSedSw.min5.1500.qza
+
+# create a qiime view file
+qiime feature-table summarize \
+ --i-table $PWD/dada2/dada2-table-SpSedSw.min5.1500.qza \
+ --o-visualization $PWD/dada2/dada2-table-SpSedSw.min5.1500.qzv \
+ --m-sample-metadata-file $PWD/2_qiime2_files/metadata.tsv
+
+# view this file
+qiime tools view $PWD/dada2/dada2-table-SpSedSw.min5.1500.qzv
+
+
+## Intermediate step here ##
+
+# curate your metadata!
+# you will need it soon!
+
+
+## Step 5 - taxonomy plot ##
+
+## Step 6 - alpha div ##
+
+## Step 7 - beta div ##
