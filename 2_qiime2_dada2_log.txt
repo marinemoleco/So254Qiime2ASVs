@@ -1,42 +1,51 @@
+## 25.09.2018 ##
 ## Step 2 - qiime2 ##
 
 # start qiime2
-source activate qiime2-2018.6
+source activate qiime2-2018.8
 
 # make dir for all DADA2 related output files
-mkdir dada2
+mkdir DADA2
 
 # import sequence fastq data
 # https://docs.qiime2.org/2018.8/tutorials/importing/
 qiime tools import \
  --type 'SampleData[PairedEndSequencesWithQuality]' \
  --input-path pe-33-manifest \
- --output-path $PWD/dada2/bbduk-paired-end-demux.qza \
+ --output-path $PWD/DADA2/bbduk-paired-end-demux.qza \
  --source-format PairedEndFastqManifestPhred33
 
 # DADA2 denoising -> create dada2 based ASVs
 # https://docs.qiime2.org/2018.6/tutorials/atacama-soils/
 # https://forum.qiime2.org/t/dada2-truncation-lengths-and-features-number/1940/9
 qiime dada2 denoise-paired \
- --i-demultiplexed-seqs $PWD/dada2/bbduk-paired-end-demux.qza \
+ --i-demultiplexed-seqs $PWD/DADA2/bbduk-paired-end-demux.qza \
  --p-trim-left-f 13 \
  --p-trim-left-r 13 \
  --p-trunc-len-f 280 \
  --p-trunc-len-r 220 \
  --p-n-threads 0 \
- --o-table $PWD/dada2/dada2-table.qza \
- --o-representative-sequences $PWD/dada2/dada2-rep-seqs.qza \
- --o-denoising-stats $PWD/dada2/dada2-denoising-stats.qza
+ --o-table $PWD/DADA2/table.qza \
+ --o-representative-sequences $PWD/DADA2/rep-seqs.qza \
+ --o-denoising-stats $PWD/DADA2/denoising-stats.qza
+
+# visualize denoising stats
+qiime metadata tabulate \
+ --m-input-file $PWD/DADA2/denoising-stats.qza \
+ --o-visualization $PWD/DADA2/denoising-stats.qzv
+
+qiime tools view $PWD/DADA2/denoising-stats.qzv
+
 
 # Feature table - first look at your data
 # create a qiime view file
 qiime feature-table summarize \
- --i-table $PWD/dada2/dada2-table.qza \
- --o-visualization $PWD/dada2/dada2-table.qzv \
- --m-sample-metadata-file $PWD/2_qiime2_files/metadata.tsv
+ --i-table $PWD/DADA2/DADA2-table.qza \
+ --o-visualization $PWD/DADA2/DADA2-table.qzv \
+ --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv
 
 # view this file
-qiime tools view $PWD/dada2/dada2-table.qzv
+qiime tools view $PWD/DADA2/table.qzv
 
 
 ## Step 3 - taxonomy assignment ##
@@ -48,49 +57,49 @@ qiime feature-classifier classify-sklearn \
   --p-n-jobs 1 \
   --p-reads-per-batch 1000 \
   --i-classifier $PWD/0_training_silva_classifier/Silva132V3V4-classifier.qza \
-  --i-reads $PWD/dada2/dada2-rep-seqs.qza \
-  --o-classification $PWD/dada2/Silva132V3V4-taxonomy-dada2.qza
+  --i-reads $PWD/DADA2/rep-seqs.qza \
+  --o-classification $PWD/DADA2/Silva132V3V4-taxonomy.qza
 
 
 ## Step 4 - filtering ##
 
 # filter samples by metadata IDs - here I just want to keep the sponge, sediment, and seawater samples - I am not interested in the controls or mock or misc samples
 qiime feature-table filter-samples \
- --i-table $PWD/dada2/dada2-table.qza \
- --m-metadata-file $PWD/2_qiime2_files/metadata.tsv \
+ --i-table $PWD/DADA2/table.qza \
+ --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
  --p-where "SampleType='Sponge' OR SampleType='Sediment' OR SampleType='Seawater'" \
- --o-filtered-table $PWD/dada2/dada2-table-SpSedSw.qza
+ --o-filtered-table $PWD/DADA2/table-SpSedSw.qza
 
 # create a qiime view file
 qiime feature-table summarize \
- --i-table $PWD/dada2/dada2-table-SpSedSw.qza \
- --o-visualization $PWD/dada2/dada2-table-SpSedSw.qzv \
- --m-sample-metadata-file $PWD/2_qiime2_files/metadata.tsv
+ --i-table $PWD/DADA2/table-SpSedSw.qza \
+ --o-visualization $PWD/DADA2/table-SpSedSw.qzv \
+ --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv
 
 # view this file
-qiime tools view $PWD/dada2/dada2-table-SpSedSw.qzv
+qiime tools view $PWD/DADA2/table-SpSedSw.qzv
 
 
-# filter samples by feature frequency - optional & not everyone likes that
+# filter samples by feature frequency - very optional & not everyone agrees with that
 qiime feature-table filter-features \
- --i-table $PWD/dada2/dada2-table-SpSedSw.qza \
+ --i-table $PWD/DADA2/table-SpSedSw.qza \
  --p-min-frequency 5 \
- --o-filtered-table $PWD/dada2/dada2-table-SpSedSw.min5.qza
+ --o-filtered-table $PWD/DADA2/table-SpSedSw.min5.qza
 
 # filter samples by read count
 qiime feature-table filter-samples \
- --i-table $PWD/dada2/dada2-table-SpSedSw.min5.qza \
+ --i-table $PWD/DADA2/table-SpSedSw.min5.qza \
  --p-min-frequency 1500 \
- --o-filtered-table $PWD/dada2/dada2-table-SpSedSw.min5.1500.qza
+ --o-filtered-table $PWD/DADA2/table-SpSedSw.min5.1500.qza
 
 # create a qiime view file
 qiime feature-table summarize \
- --i-table $PWD/dada2/dada2-table-SpSedSw.min5.1500.qza \
- --o-visualization $PWD/dada2/dada2-table-SpSedSw.min5.1500.qzv \
- --m-sample-metadata-file $PWD/2_qiime2_files/metadata.tsv
+ --i-table $PWD/DADA2/table-SpSedSw.min5.1500.qza \
+ --o-visualization $PWD/DADA2/table-SpSedSw.min5.1500.qzv \
+ --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv
 
 # view this file
-qiime tools view $PWD/dada2/dada2-table-SpSedSw.min5.1500.qzv
+qiime tools view $PWD/DADA2/table-SpSedSw.min5.1500.qzv
 
 
 ## Intermediate step here ##
