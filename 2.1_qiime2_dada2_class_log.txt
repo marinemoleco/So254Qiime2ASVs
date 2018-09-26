@@ -119,3 +119,40 @@ qiime diversity beta-group-significance \
   --p-method permdisp
 
 qiime tools view $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-SampleType-significance-permdisp.qzv
+
+###########################################
+# playing around with plots and custom axes
+
+# Depth
+qiime emperor plot \
+  --i-pcoa $PWD/DADA2/Class/core-metrics-results/unweighted_unifrac_pcoa_results.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --p-custom-axes Depth \
+  --o-visualization $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-emperor-Depth.qzv
+
+qiime tools view $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-emperor-Depth.qzv
+
+qiime emperor plot \
+  --i-pcoa $PWD/DADA2/Class/core-metrics-results/weighted_unifrac_pcoa_results.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --p-custom-axes Depth \
+  --o-visualization $PWD/DADA2/Class/core-metrics-results/weighted-unifrac-emperor-Depth.qzv
+
+qiime tools view $PWD/DADA2/Class/core-metrics-results/weighted-unifrac-emperor-Depth.qzv
+
+# Long Lat
+qiime emperor plot \
+  --i-pcoa $PWD/DADA2/Class/core-metrics-results/unweighted_unifrac_pcoa_results.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --p-custom-axes Lat \
+  --o-visualization $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-emperor-Lat.qzv
+
+qiime tools view $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-emperor-Lat.qzv
+
+qiime emperor plot \
+  --i-pcoa $PWD/DADA2/Class/core-metrics-results/unweighted_unifrac_pcoa_results.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --p-custom-axes Lon \
+  --o-visualization $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-emperor-Lon.qzv
+
+qiime tools view $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-emperor-Lon.qzv
