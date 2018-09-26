@@ -47,6 +47,9 @@ qiime feature-table summarize \
 # view this file
 qiime tools view $PWD/DADA2/table.qzv
 
+# Number of samples	305
+# Number of features	49,145
+# Total frequency	3,724,800
 
 ## Step 3 - taxonomy assignment ##
 # all sequences will be classified and it seems that any kind of filtering will have no effect on this classification
@@ -60,6 +63,11 @@ qiime feature-classifier classify-sklearn \
   --i-reads $PWD/DADA2/rep-seqs.qza \
   --o-classification $PWD/DADA2/Silva132V3V4-taxonomy.qza
 
+qiime metadata tabulate \
+  --m-input-file $PWD/DADA2/Silva132V3V4-taxonomy.qza \
+  --o-visualization $PWD/DADA2/Silva132V3V4-taxonomy.qzv
+
+qiime tools view $PWD/DADA2/Silva132V3V4-taxonomy.qzv
 
 ## Step 4 - filtering ##
 
@@ -79,6 +87,9 @@ qiime feature-table summarize \
 # view this file
 qiime tools view $PWD/DADA2/table-SpSedSw.qzv
 
+# Number of samples	271
+# Number of features	44,349
+# Total frequency	3,391,430
 
 # filter samples by feature frequency - very optional & not everyone agrees with that
 qiime feature-table filter-features \
@@ -101,15 +112,23 @@ qiime feature-table summarize \
 # view this file
 qiime tools view $PWD/DADA2/table-SpSedSw.min5.1500.qzv
 
+# Number of samples	265
+# Number of features	38,216
+# Total frequency	3,372,510
 
 ## Intermediate step here ##
 
 # curate your metadata!
 # you will need it soon!
 
+## Step 5 - phylogenetic tree ##
+# https://docs.qiime2.org/2018.8/tutorials/moving-pictures/#generate-a-tree-for-phylogenetic-diversity-analyses
+# https://docs.qiime2.org/2018.8/plugins/available/phylogeny/align-to-tree-mafft-fasttree/
 
-## Step 5 - taxonomy plot ##
-
-## Step 6 - alpha div ##
-
-## Step 7 - beta div ##
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --p-n-threads 0 \
+  --i-sequences $PWD/DADA2/rep-seqs.qza \
+  --o-alignment $PWD/DADA2/aligned-rep-seqs.qza \
+  --o-masked-alignment $PWD/DADA2/masked-aligned-rep-seqs.qza \
+  --o-tree $PWD/DADA2/unrooted-tree.qza \
+  --o-rooted-tree $PWD/DADA2/rooted-tree.qza
