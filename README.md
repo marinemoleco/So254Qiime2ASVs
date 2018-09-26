@@ -8,10 +8,11 @@ log file and folder numbers imply their order in this "pipeline"
 - add OTU clustering
 - alpha diversity
 - beta diversity
+- change deblur specific file names, too
 
 ### Update 10:43 25.09.2018
 - added curated metadata.v2
-- changed method specific files names to general file names -> make the qiime2 commands interchangeable between clustering and ASV methods
+- changed DADA2 specific files names to general file names -> make the qiime2 commands interchangeable between clustering and ASV methods
 
 ### Update 8:15 13.09.2018
 - updated dada2 log
