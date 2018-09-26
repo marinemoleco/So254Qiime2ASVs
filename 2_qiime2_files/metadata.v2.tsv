@@ -1,4 +1,4 @@
-#SampleID	sample_name	SampleType	Date	SamplingDay	ROVstation	LocationName	SubstrateHabitat	MainGeography	Lon	Lat	Depth	Temp	TaxStat	Pooled	Class	Family	Genus	Species	EnvReplicates	MaxReplicates	MinReplicates	on_board_ID	LIMS-ID
+#SampleID	name	SampleType	Date	SamplingDay	ROVstation	LocationName	SubstrateHabitat	MainGeography	Lon	Lat	Depth	Temp	TaxStat	Pooled	Class	Family	Genus	Species	EnvReplicates	MaxReplicates	MinReplicates	on_board_ID	LIMS-ID
 NZ-001	NZ-001	Sponge	30.01.17	Day01	02ROV01	Kiwi Seamount, Three Kings Ridge	na	na	-30.7330856	173.9086609	768	na	OK	Hexactinellida	Hexactinellida	Aphrocallistidae 	Aphrocallistes	Aphrocallistes beatrix	Aphrocallistes beatrix	YES	YES	NZ-001	WB-00079
 NZ-002	NZ-002	Sponge	30.01.17	Day01	02ROV01	Kiwi Seamount, Three Kings Ridge	na	na	-30.7325077	173.9098053	759	na	OK	Hexactinellida	Hexactinellida	Aphrocallistidae	Aphrocallistes	Aphrocallistes beatrix	Aphrocallistes beatrix	YES	YES	NZ-002	WB-00080
 NZ-008	NZ-008	Sponge	30.01.17	Day01	02ROV01	Kiwi Seamount, Three Kings Ridge	na	na	-30.7325668	173.90979	759	na	BAD	Hexactinellida	Hexactinellida	Aulocalycidae	Rhabdodictyum	BAD Latrunculid	BAD Latrunculid	NO	NO	NZ-008	WB-00083
