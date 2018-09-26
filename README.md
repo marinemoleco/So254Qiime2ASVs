@@ -14,6 +14,7 @@ log file and folder numbers imply their order in this "pipeline"
 - changed DADA2 specific files names to general file names -> make the qiime2 commands interchangeable between clustering and ASV methods
 - deblur is now 3. and dada2 is still 2.
 - added sample filter by "Class" in metadata.v2 workflow "2.1_qiime2_dada2_class_log.txt" -> Demo, Hexac, Sed, Sw
+- first alpha and beta div analyses for "Class" filtered data
 - minor changes in "2_qiime2_dada2_log.txt"
 
 ### Update 8:15 13.09.2018
