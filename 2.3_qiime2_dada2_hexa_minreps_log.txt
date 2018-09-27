@@ -1,0 +1,176 @@
+## Keep only Hexactinellida that have n >= 3 replicates ##
+
+mkdir $PWD/DADA2/HexaMinReps/
+
+## Step 1 - Filter samples my Class and SampleType ##
+# filter samples by metadata IDs - here I just want to keep the sponge, sediment, and seawater samples - I am not interested in the controls or mock or misc samples
+qiime feature-table filter-samples \
+ --i-table $PWD/DADA2/table-SpSedSw.min5.1500.qza \
+ --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+ --p-where "Class='Hexactinellida' AND MinReplicates='YES'" \
+ --o-filtered-table $PWD/DADA2/HexaMinReps/table-SpSedSw.min5.1500.qza
+
+# create a qiime view file
+qiime feature-table summarize \
+ --i-table $PWD/DADA2/HexaMinReps/table-SpSedSw.min5.1500.qza \
+ --o-visualization $PWD/DADA2/HexaMinReps/table-SpSedSw.min5.1500.qzv \
+ --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv
+
+# view this file
+qiime tools view $PWD/DADA2/HexaMinReps/table-SpSedSw.min5.1500.qzv
+
+# Table summary
+# Metric		Sample
+# Number of samples	46
+# Number of features	6,419
+# Total frequency	689,869
+
+# Frequency per sample
+# 			Frequency
+# Minimum frequency	2,959.0
+# 1st quartile		11,043.0
+# Median frequency	14,131.0
+# 3rd quartile		17,367.0
+# Maximum frequency	47,293.0
+# Mean frequency	14,997.152173913044
+
+# Frequency per feature
+# 			Frequency
+# Minimum frequency	2.0
+# 1st quartile		7.0
+# Median frequency	12.0
+# 3rd quartile		25.0
+# Maximum frequency	24,604.0
+# Mean frequency	107.47297086773641
+
+## Step 2 - Alpha & beta ##
+# https://docs.qiime2.org/2018.8/plugins/available/diversity/core-metrics-phylogenetic/
+
+qiime diversity core-metrics-phylogenetic \
+  --p-n-jobs 8 \
+  --i-phylogeny $PWD/DADA2/rooted-tree.qza \
+  --i-table $PWD/DADA2/HexaMinReps/table-SpSedSw.min5.1500.qza \
+  --p-sampling-depth 2959 \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --output-dir $PWD/DADA2/HexaMinReps/core-metrics-results
+
+
+# the famous 3D plots
+qiime tools view $PWD/DADA2/HexaMinReps/core-metrics-results/unweighted_unifrac_emperor.qzv
+qiime tools view $PWD/DADA2/HexaMinReps/core-metrics-results/weighted_unifrac_emperor.qzv
+
+
+## alpha div metrics ##
+
+# phylogenetic diversity
+qiime diversity alpha-group-significance \
+  --i-alpha-diversity $PWD/DADA2/HexaMinReps/core-metrics-results/faith_pd_vector.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --o-visualization $PWD/DADA2/HexaMinReps/core-metrics-results/faith-pd-group-significance.qzv
+
+qiime tools view $PWD/DADA2/HexaMinReps/core-metrics-results/faith-pd-group-significance.qzv
+
+# Kruskal-Wallis (all groups)
+# Result
+# H		31.832099907493017
+# p-value	0.0008114990429921752
+
+# evenness
+qiime diversity alpha-group-significance \
+  --i-alpha-diversity $PWD/DADA2/HexaMinReps/core-metrics-results/evenness_vector.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --o-visualization $PWD/DADA2/HexaMinReps/core-metrics-results/evenness-group-significance.qzv
+
+qiime tools view $PWD/DADA2/HexaMinReps/core-metrics-results/evenness-group-significance.qzv
+
+# Kruskal-Wallis (all groups)
+# Result
+# H		27.33913043478259
+# p-value	0.00408279313893242
+
+## beta diversity ##
+## weighted ##
+
+# permanova pooled
+qiime diversity beta-group-significance \
+  --i-distance-matrix $PWD/DADA2/HexaMinReps/core-metrics-results/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --m-metadata-column Species \
+  --o-visualization $PWD/DADA2/HexaMinReps/core-metrics-results/weighted-unifrac-Species-significance-permanova.qzv \
+  --p-pairwise \
+  --p-method permanova
+
+qiime tools view $PWD/DADA2/HexaMinReps/core-metrics-results/weighted-unifrac-Species-significance-permanova.qzv
+
+# PERMANOVA results
+# method name	PERMANOVA
+# test statistic name		pseudo-F
+# sample size			46
+# number of groups		12
+# test statistic		10.719
+# p-value			0.001
+# number of permutations	999
+
+# permdisp pooled
+qiime diversity beta-group-significance \
+  --i-distance-matrix $PWD/DADA2/HexaMinReps/core-metrics-results/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --m-metadata-column Species \
+  --o-visualization $PWD/DADA2/HexaMinReps/core-metrics-results/weighted-unifrac-Species-significance-permdisp.qzv \
+  --p-pairwise \
+  --p-method permdisp
+
+qiime tools view $PWD/DADA2/HexaMinReps/core-metrics-results/weighted-unifrac-Species-significance-permdisp.qzv
+
+# PERMDISP results
+# method name	PERMDISP
+# test statistic name		F-value
+# sample size			46
+# number of groups		12
+# test statistic		1.59779
+# p-value			0.058
+# number of permutations	999
+
+
+## beta diversity ##
+## unweighted ##
+
+# permanova pooled
+qiime diversity beta-group-significance \
+  --i-distance-matrix $PWD/DADA2/HexaMinReps/core-metrics-results/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --m-metadata-column Species \
+  --o-visualization $PWD/DADA2/HexaMinReps/core-metrics-results/unweighted-unifrac-Species-significance-permanova.qzv \
+  --p-pairwise \
+  --p-method permanova
+
+qiime tools view $PWD/DADA2/HexaMinReps/core-metrics-results/unweighted-unifrac-Species-significance-permanova.qzv
+
+# PERMANOVA results
+# method name	PERMANOVA
+# test statistic name		pseudo-F
+# sample size			46
+# number of groups		12
+# test statistic		2.51629
+# p-value			0.001
+# number of permutations	999
+
+# permdisp pooled
+qiime diversity beta-group-significance \
+  --i-distance-matrix $PWD/DADA2/HexaMinReps/core-metrics-results/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --m-metadata-column Species \
+  --o-visualization $PWD/DADA2/HexaMinReps/core-metrics-results/unweighted-unifrac-Species-significance-permdisp.qzv \
+  --p-pairwise \
+  --p-method permdisp
+
+qiime tools view $PWD/DADA2/HexaMinReps/core-metrics-results/unweighted-unifrac-Species-significance-permdisp.qzv
+
+# PERMDISP results
+# method name	PERMDISP
+# test statistic name		F-value
+# sample size			46
+# number of groups		12
+# test statistic		1.10889
+# p-value			0.262
+# number of permutations	999

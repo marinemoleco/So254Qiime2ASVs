@@ -23,9 +23,21 @@ qiime tools view $PWD/DADA2/Class/table-SpSedSw.min5.1500.qzv
 # Number of features	34,880
 # Total frequency	2,959,525
 
-# min freq 2.0
-# should be 5 - happened during the sample filtering
+# Frequency per sample
 # Minimum frequency	2,696.0
+# 1st quartile		7,595.25
+# Median frequency	10,934.5
+# 3rd quartile		15,554.0
+# Maximum frequency	114,121.0
+# Mean frequency	12,647.542735042734
+
+# Frequency per feature
+# Minimum frequency	2.0
+# 1st quartile		9.0
+# Median frequency	16.0
+# 3rd quartile		34.0
+# Maximum frequency	78,482.0
+# Mean frequency	84.84876720183486
 
 ## Step 2 - Taxonomic plot ##
 qiime taxa barplot \
@@ -72,6 +84,15 @@ qiime diversity alpha-group-significance \
 
 qiime tools view $PWD/DADA2/Class/core-metrics-results/evenness-group-significance.qzv
 
+# rarefaction plots
+qiime diversity alpha-rarefaction \
+  --i-table $PWD/DADA2/Class/table-SpSedSw.min5.1500.qza \
+  --i-phylogeny $PWD/DADA2/rooted-tree.qza \
+  --p-max-depth 2696 \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --o-visualization $PWD/DADA2/Class/alpha-rarefaction.qzv
+
+qiime tools view $PWD/DADA2/Class/alpha-rarefaction.qzv
 
 ## beta diversity ##
 ## unweighted ##
@@ -120,6 +141,33 @@ qiime diversity beta-group-significance \
 
 qiime tools view $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-SampleType-significance-permdisp.qzv
 
+
+## beta diversity ##
+## weighted ##
+
+# permanova pooled
+qiime diversity beta-group-significance \
+  --i-distance-matrix $PWD/DADA2/Class/core-metrics-results/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --m-metadata-column Pooled \
+  --o-visualization $PWD/DADA2/Class/core-metrics-results/weighted-unifrac-Pooled-significance-permanova.qzv \
+  --p-pairwise \
+  --p-method permanova
+
+qiime tools view $PWD/DADA2/Class/core-metrics-results/weighted-unifrac-Pooled-significance-permanova.qzv
+
+# permdisp pooled
+qiime diversity beta-group-significance \
+  --i-distance-matrix $PWD/DADA2/Class/core-metrics-results/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --m-metadata-column Pooled \
+  --o-visualization $PWD/DADA2/Class/core-metrics-results/weighted-unifrac-Pooled-significance-permdisp.qzv \
+  --p-pairwise \
+  --p-method permdisp
+
+qiime tools view $PWD/DADA2/Class/core-metrics-results/weighted-unifrac-Pooled-significance-permdisp.qzv
+
+
 ###########################################
 # playing around with plots and custom axes
 
@@ -156,3 +204,5 @@ qiime emperor plot \
   --o-visualization $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-emperor-Lon.qzv
 
 qiime tools view $PWD/DADA2/Class/core-metrics-results/unweighted-unifrac-emperor-Lon.qzv
+
+

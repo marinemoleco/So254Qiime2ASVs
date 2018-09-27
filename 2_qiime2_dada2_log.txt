@@ -51,6 +51,22 @@ qiime tools view $PWD/DADA2/table.qzv
 # Number of features	49,145
 # Total frequency	3,724,800
 
+# Frequency per sample
+# Minimum frequency	0.0
+# 1st quartile		7,458.0
+# Median frequency	11,037.0
+# 3rd quartile		15,573.0
+# Maximum frequency	114,187.0
+# Mean frequency	12,212.459016393443
+
+# Frequency per feature
+# Minimum frequency	1.0
+# 1st quartile		7.0
+# Median frequency	14.0
+# 3rd quartile		31.0
+# Maximum frequency	78,482.0
+# Mean frequency	75.79204395157188
+
 ## Step 3 - taxonomy assignment ##
 # all sequences will be classified and it seems that any kind of filtering will have no effect on this classification
 # hence it makes sense to classify your reads at this point - regardless of any subsequent dataset manipulation
@@ -91,6 +107,22 @@ qiime tools view $PWD/DADA2/table-SpSedSw.qzv
 # Number of features	44,349
 # Total frequency	3,391,430
 
+# Frequency per sample
+# Minimum frequency	0.0
+# 1st quartile		7,477.0
+# Median frequency	11,118.0
+# 3rd quartile		15,598.5
+# Maximum frequency	114,187.0
+# Mean frequency	12,514.50184501845
+
+# Frequency per feature
+# Minimum frequency	1.0
+# 1st quartile		7.0
+# Median frequency	14.0
+# 3rd quartile		30.0
+# Maximum frequency	78,482.0
+# Mean frequency	76.47139732575707
+
 # filter samples by feature frequency - very optional & not everyone agrees with that
 qiime feature-table filter-features \
  --i-table $PWD/DADA2/table-SpSedSw.qza \
@@ -115,6 +147,22 @@ qiime tools view $PWD/DADA2/table-SpSedSw.min5.1500.qzv
 # Number of samples	265
 # Number of features	38,216
 # Total frequency	3,372,510
+
+# Frequency per sample
+# Minimum frequency	2,696.0
+# 1st quartile		7,773.0
+# Median frequency	11,127.0
+# 3rd quartile		15,639.0
+# Maximum frequency	114,121.0
+# Mean frequency	12,726.452830188678
+
+# Frequency per feature
+# Minimum frequency	5.0
+# 1st quartile		9.0
+# Median frequency	17.0
+# 3rd quartile		34.0
+# Maximum frequency	78,482.0
+# Mean frequency	88.2486393133766
 
 ## Intermediate step here ##
 
