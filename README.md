@@ -8,6 +8,7 @@ log file and folder numbers imply their order in this "pipeline"
 - add OTU clustering
 - change deblur specific file names, too
 - add more analyses =)
+- update metadata Lon Lat NSEW
 
 ### Update 14:10 25.09.2018
 - added curated metadata.v2
