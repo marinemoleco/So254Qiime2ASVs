@@ -40,8 +40,8 @@ qiime tools view $PWD/DADA2/denoising-stats.qzv
 # Feature table - first look at your data
 # create a qiime view file
 qiime feature-table summarize \
- --i-table $PWD/DADA2/DADA2-table.qza \
- --o-visualization $PWD/DADA2/DADA2-table.qzv \
+ --i-table $PWD/DADA2/table.qza \
+ --o-visualization $PWD/DADA2/table.qzv \
  --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv
 
 # view this file
