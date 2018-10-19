@@ -1,0 +1,21 @@
+## Keep only sponges that are classified at class level and environmental samples ##
+
+mkdir $PWD/DADA2/SW/
+
+## Step 1 - Filter samples my Class and SampleType ##
+# filter samples by metadata IDs - here I just want to keep the sponge, sediment, and seawater samples - I am not interested in the controls or mock or misc samples
+qiime feature-table filter-samples \
+ --i-table $PWD/DADA2/table-SpSedSw.min5.1500.qza \
+ --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+ --p-where "SampleType='Seawater'" \
+ --o-filtered-table $PWD/DADA2/SW/table-SpSedSw.min5.1500.qza
+
+
+## Step 2 - Taxonomic plot ##
+qiime taxa barplot \
+  --i-table $PWD/DADA2/SW/table-SpSedSw.min5.1500.qza \
+  --i-taxonomy $PWD/DADA2/Silva132V3V4-taxonomy.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --o-visualization $PWD/DADA2/SW/taxa-bar-plots.qzv
+
+qiime tools view $PWD/DADA2/SW/taxa-bar-plots.qzv
