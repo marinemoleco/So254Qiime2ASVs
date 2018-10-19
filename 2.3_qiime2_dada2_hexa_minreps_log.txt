@@ -43,6 +43,15 @@ qiime tools view $PWD/DADA2/HexaMinReps/table-SpSedSw.min5.1500.qzv
 # Maximum frequency	24,604.0
 # Mean frequency	107.47297086773641
 
+## Taxonomic plot ##
+qiime taxa barplot \
+  --i-table $PWD/DADA2/HexaMinReps/table-SpSedSw.min5.1500.qza \
+  --i-taxonomy $PWD/DADA2/Silva132V3V4-taxonomy.qza \
+  --m-metadata-file $PWD/2_qiime2_files/metadata.v2.tsv \
+  --o-visualization $PWD/DADA2/HexaMinReps/taxa-bar-plots.qzv
+
+qiime tools view $PWD/DADA2/HexaMinReps/taxa-bar-plots.qzv
+
 ## Step 2 - Alpha & beta ##
 # https://docs.qiime2.org/2018.8/plugins/available/diversity/core-metrics-phylogenetic/
 
