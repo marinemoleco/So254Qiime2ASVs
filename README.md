@@ -8,6 +8,7 @@ log file and folder numbers imply their order in this "pipeline"
 - rework and update DADA2 workflow
 
 ### Update 07.01.2019
+- removed several outdated and temporary log files
 - removed quality trimming and updated 1_QualityControl_log.txt
 - update 2.0_qiime2_dada2_log.txt - new parameters and settings from the beginning - will continue
 
