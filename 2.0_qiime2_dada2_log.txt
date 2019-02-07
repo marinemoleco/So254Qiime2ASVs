@@ -49,45 +49,24 @@ qiime feature-table summarize \
 qiime tools view $PWD/DADA2/table.qzv
 
 # Number of samples	305
-# Number of features	49,145
-# Total frequency	3,724,800
-
-Metric	Sample
-Number of samples	305
-Number of features	49,130
-Total frequency	3,669,277
+# Number of features	49,130
+# Total frequency	3,669,277
 
 # Frequency per sample
 # Minimum frequency	0.0
-# 1st quartile		7,458.0
-# Median frequency	11,037.0
-# 3rd quartile		15,573.0
-# Maximum frequency	114,187.0
-# Mean frequency	12,212.459016393443
-
-Minimum frequency	0.0
-1st quartile	7,521.0
-Median frequency	10,672.0
-3rd quartile	14,685.0
-Maximum frequency	108,523.0
-Mean frequency	12,030.416393442623
+# 1st quartile		7,521.0
+# Median frequency	10,672.0
+# 3rd quartile		14,685.0
+# Maximum frequency	108,523.0
+# Mean frequency	12,030.416393442623
 
 # Frequency per feature
 # Minimum frequency	1.0
-# 1st quartile		7.0
-# Median frequency	14.0
-# 3rd quartile		31.0
-# Maximum frequency	78,482.0
-# Mean frequency	75.79204395157188
-
-
-Frequency
-Minimum frequency	1.0
-1st quartile	8.0
-Median frequency	17.0
-3rd quartile	39.0
-Maximum frequency	39,087.0
-Mean frequency	74.68506004477916
+# 1st quartile		8.0
+# Median frequency	17.0
+# 3rd quartile		39.0
+# Maximum frequency	39,087.0
+# Mean frequency	74.68506004477916
 
 
 ## Step 3 - taxonomy assignment ##
@@ -95,12 +74,18 @@ Mean frequency	74.68506004477916
 # hence it makes sense to classify your reads at this point - regardless of any subsequent dataset manipulation
 # on my laptop (Ubuntu, 8 threads, 16GB memory, 32GB swap, >500GB temp space) it only worked with 1 job, everything above failed ... memory or temp issue?
 
+# the in qiime2-2018.11 generated silva classifier does not work anymore with the sklearn qiime2-2019.1 classify-sklearn command
+
 qiime feature-classifier classify-sklearn \
   --p-n-jobs 1 \
   --p-reads-per-batch 1000 \
-  --i-classifier $PWD/0_training_silva_classifier/Silva132V3V4-classifier.0.19.1.qza \
+  --i-classifier $PWD/0_training_silva_classifier/Silva132V3V4-classifier.qza \
   --i-reads $PWD/DADA2/rep-seqs.qza \
   --o-classification $PWD/DADA2/Silva132V3V4-taxonomy.qza
+
+#############################
+### work in progress line ###
+#############################
 
 qiime metadata tabulate \
   --m-input-file $PWD/DADA2/Silva132V3V4-taxonomy.qza \
