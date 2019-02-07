@@ -1,3 +1,21 @@
+## 07.01.2019 ##
+## Step 1 - Quality control ##
+
+# Here I use fastqc and multiqc to decide the trim and truncate parameters for "qiime dada2 denoise-paired"
+# Important is that the paired reads overlap at least 20 bp
+
+# drop all fastq files in one single folder, here /fastqc/
+cd fastq
+./fastqc *.fastq.gz
+./multiqc .
+
+# open the multiqc_report.html and choose appropriate --p-trunc-len-f & --p-trunc-len-r parameters
+# The bbduk_trim.sh script in "1_QualityFiltering_files" is not necessary anymore. I decided to skip the bbduk quality filtering to avoid that DADA2 and the preliminary quality trimming interfer
+
+
+
+
+## Old quality filtering log content ##
 ## Step 1 - quality filtering ##
 
 # quality filtering using bbduk
