@@ -5,17 +5,18 @@ Folders contain files necessary or derived from the commands and scripts mention
 log file and folder numbers imply their order in this "pipeline"
 
 ### to do
-- add OTU clustering
-- change deblur specific file names, too
-- add more analyses =)
-- update metadata Lon Lat NSEW
+- rework and update DADA2 workflow
 
-### Update 12:07 27.09.2018
+### Update 07.01.2019
+- removed quality trimming and updated 1_QualityControl_log.txt
+- update 2.0_qiime2_dada2_log.txt - new parameters and settings from the beginning - will continue
+
+### Update 27.09.2018
 - minor metadata.v2 update
 - several "Class" analysis updates within "2.1_qiime2_dada2_class_log.txt"
 - added 2.2 and 2.3 for preliminary Hexactinellida and Demospongiae specific analyses
 
-### Update 14:10 26.09.2018
+### Update 26.09.2018
 - added curated metadata.v2
 - changed DADA2 specific files names to general file names -> make the qiime2 commands interchangeable between clustering and ASV methods
 - deblur is now 3. and dada2 is still 2.
@@ -23,7 +24,7 @@ log file and folder numbers imply their order in this "pipeline"
 - first alpha and beta div analyses for "Class" filtered data
 - minor changes in "2_qiime2_dada2_log.txt"
 
-### Update 8:15 13.09.2018
+### Update 13.09.2018
 - updated dada2 log
 - added deblur log
 - new metadata and manifest files for deblur
