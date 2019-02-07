@@ -70,10 +70,8 @@ qiime tools view $PWD/DADA2/table.qzv
 
 
 ## Step 3 - taxonomy assignment ##
-# all sequences will be classified and it seems that any kind of filtering will have no effect on this classification
-# hence it makes sense to classify your reads at this point - regardless of any subsequent dataset manipulation
-# on my laptop (Ubuntu, 8 threads, 16GB memory, 32GB swap, >500GB temp space) it only worked with 1 job, everything above failed ... memory or temp issue?
-
+# all sequences will be classified - regardless of any subsequent dataset manipulation
+# 16 GB memory = 1 job ... at least on my laptop
 # the in qiime2-2018.11 generated silva classifier does not work anymore with the sklearn qiime2-2019.1 classify-sklearn command
 
 qiime feature-classifier classify-sklearn \
