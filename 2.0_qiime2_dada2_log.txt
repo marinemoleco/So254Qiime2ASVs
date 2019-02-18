@@ -81,15 +81,14 @@ qiime feature-classifier classify-sklearn \
   --i-reads $PWD/DADA2/rep-seqs.qza \
   --o-classification $PWD/DADA2/Silva132V3V4-taxonomy.qza
 
-#############################
-### work in progress line ###
-#############################
-
 qiime metadata tabulate \
   --m-input-file $PWD/DADA2/Silva132V3V4-taxonomy.qza \
   --o-visualization $PWD/DADA2/Silva132V3V4-taxonomy.qzv
 
 qiime tools view $PWD/DADA2/Silva132V3V4-taxonomy.qzv
+
+# Note only 44 unassigned
+
 
 ## Step 4 - filtering ##
 
