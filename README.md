@@ -4,11 +4,10 @@
 Folders contain files necessary or derived from the commands and scripts mentioned in the log files in the main folder.
 log file and folder numbers imply their order in this "pipeline"
 
-### to do
-- rework and update DADA2 workflow
-
 ### Update 18.02.2019
 - added *--p-confidence 0.8* to *classify-sklearn*
+- added Kathrin's "no junk" filter (i.e. Mitochondria, Chloroplast, unassigned)
+- updated initial filtering
 
 ### Update 07.02.2019
 - removed several outdated and temporary log files
