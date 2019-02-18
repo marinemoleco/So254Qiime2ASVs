@@ -92,6 +92,18 @@ qiime tools view $PWD/DADA2/Silva132V3V4-taxonomy.qzv
 
 ## Step 4 - filtering ##
 
+qiime feature-table filter-features \
+--i-table $PWD/dada2/dada2-table1500.qza \
+--m-metadata-file $PWD/dada2/Silva132V3V4-taxonomy-dada2.qza \
+--p-where "Taxon NOT LIKE '%Chloroplast%'" \
+--o-filtered-table $PWD/dada2/dada2-table1500nochloroplasts.qza
+ 
+qiime feature-table filter-features \
+--i-table $PWD/dada2/dada2-table1500nochloroplasts.qza \
+--m-metadata-file $PWD/dada2/Silva132V3V4-taxonomy-dada2.qza \
+--p-where "Taxon NOT LIKE '%Mitochondria%'" \
+--o-filtered-table $PWD/dada2/dada2-table1500nochloroplastsmitochondria.qza
+
 # filter samples by metadata IDs - here I just want to keep the sponge, sediment, and seawater samples - I am not interested in the controls or mock or misc samples
 qiime feature-table filter-samples \
  --i-table $PWD/DADA2/table.qza \
