@@ -79,6 +79,7 @@ qiime feature-classifier classify-sklearn \
   --p-reads-per-batch 1000 \
   --i-classifier $PWD/0_training_silva_classifier/Silva132V3V4-classifier.qza \
   --i-reads $PWD/DADA2/rep-seqs.qza \
+  --p-confidence 0.8
   --o-classification $PWD/DADA2/Silva132V3V4-taxonomy.qza
 
 qiime metadata tabulate \
@@ -87,26 +88,35 @@ qiime metadata tabulate \
 
 qiime tools view $PWD/DADA2/Silva132V3V4-taxonomy.qzv
 
-# Note only 44 unassigned
+# Note: only 44 unassigned
 
 
 ## Step 4 - filtering ##
 
+# 'no-junk' filter
 qiime feature-table filter-features \
---i-table $PWD/dada2/dada2-table1500.qza \
---m-metadata-file $PWD/dada2/Silva132V3V4-taxonomy-dada2.qza \
+--i-table $PWD/DADA2/table.qza \
+--m-metadata-file $PWD/DADA2/Silva132V3V4-taxonomy.qza \
 --p-where "Taxon NOT LIKE '%Chloroplast%'" \
---o-filtered-table $PWD/dada2/dada2-table1500nochloroplasts.qza
- 
+--o-filtered-table $PWD/DADA2/table-no-junk.qza
+&&
 qiime feature-table filter-features \
---i-table $PWD/dada2/dada2-table1500nochloroplasts.qza \
---m-metadata-file $PWD/dada2/Silva132V3V4-taxonomy-dada2.qza \
+--i-table $PWD/DADA2/table-no-junk.qza \
+--m-metadata-file $PWD/DADA2/Silva132V3V4-taxonomy.qza \
 --p-where "Taxon NOT LIKE '%Mitochondria%'" \
---o-filtered-table $PWD/dada2/dada2-table1500nochloroplastsmitochondria.qza
+--o-filtered-table $PWD/DADA2/table-no-junk.qza
+&&
+qiime feature-table filter-features \
+--i-table $PWD/DADA2/table-no-junk.qza \
+--m-metadata-file $PWD/DADA2/Silva132V3V4-taxonomy.qza \
+--p-where "Taxon NOT LIKE '%Unassigned%'" \
+--o-filtered-table $PWD/DADA2/table-no-junk.qza
+
+# Note: 49,130 -> 48,606 features
 
 # filter samples by metadata IDs - here I just want to keep the sponge, sediment, and seawater samples - I am not interested in the controls or mock or misc samples
 qiime feature-table filter-samples \
- --i-table $PWD/DADA2/table.qza \
+ --i-table $PWD/DADA2/table-no-junk.qza \
  --m-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv \
  --p-where "SampleType='Sponge' OR SampleType='Sediment' OR SampleType='Seawater'" \
  --o-filtered-table $PWD/DADA2/table-SpSedSw.qza
@@ -120,25 +130,29 @@ qiime feature-table summarize \
 # view this file
 qiime tools view $PWD/DADA2/table-SpSedSw.qzv
 
-# Number of samples	271
-# Number of features	44,349
-# Total frequency	3,391,430
+# Number of samples	269
+# Number of features	45,177
+# Total frequency	3,225,885
 
 # Frequency per sample
-# Minimum frequency	0.0
-# 1st quartile		7,477.0
-# Median frequency	11,118.0
-# 3rd quartile		15,598.5
-# Maximum frequency	114,187.0
-# Mean frequency	12,514.50184501845
+# Minimum frequency	19.0
+# 1st quartile		7,747.0
+# Median frequency	10,672.0
+# 3rd quartile		15,411.0
+# Maximum frequency	71,856.0
+# Mean frequency	11,992.1375464684
 
 # Frequency per feature
 # Minimum frequency	1.0
-# 1st quartile		7.0
-# Median frequency	14.0
-# 3rd quartile		30.0
-# Maximum frequency	78,482.0
-# Mean frequency	76.47139732575707
+# 1st quartile		8.0
+# Median frequency	16.0
+# 3rd quartile		37.0
+# Maximum frequency	39,087.0
+# Mean frequency	71.40547181087722
+
+#############################
+### work in progress line ###
+#############################
 
 # filter samples by feature frequency - very optional & not everyone agrees with that
 qiime feature-table filter-features \
