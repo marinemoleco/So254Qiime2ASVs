@@ -161,41 +161,20 @@ qiime tools view $PWD/DADA2/table-SpSedSw.qzv
 ### work in progress line ###
 #############################
 
-# filter samples by feature frequency - very optional & not everyone agrees with that
-qiime feature-table filter-features \
- --i-table $PWD/DADA2/table-SpSedSw.qza \
- --p-min-frequency 5 \
- --o-filtered-table $PWD/DADA2/table-SpSedSw.min5.qza
-
-qiime feature-table filter-features \
- --i-table $PWD/DADA2/table-SpSedSw.qza \
- --p-min-frequency 3 \
- --o-filtered-table $PWD/DADA2/table-SpSedSw.min3.qza
-
 # filter samples by read count
 qiime feature-table filter-samples \
- --i-table $PWD/DADA2/table-SpSedSw.min5.qza \
+ --i-table $PWD/DADA2/table-SpSedSw.qza \
  --p-min-frequency 1500 \
- --o-filtered-table $PWD/DADA2/table-SpSedSw.min5.1500.qza
-
-qiime feature-table filter-samples \
- --i-table $PWD/DADA2/table-SpSedSw.min3.qza \
- --p-min-frequency 1500 \
- --o-filtered-table $PWD/DADA2/table-SpSedSw.min3.1500.qza
+ --o-filtered-table $PWD/DADA2/table-SpSedSw.1500.qza
 
 # create a qiime view file
 qiime feature-table summarize \
- --i-table $PWD/DADA2/table-SpSedSw.min5.1500.qza \
- --o-visualization $PWD/DADA2/table-SpSedSw.min5.1500.qzv \
- --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv
-
-qiime feature-table summarize \
- --i-table $PWD/DADA2/table-SpSedSw.min3.1500.qza \
- --o-visualization $PWD/DADA2/table-SpSedSw.min3.1500.qzv \
+ --i-table $PWD/DADA2/table-SpSedSw.1500.qza \
+ --o-visualization $PWD/DADA2/table-SpSedSw.1500.qzv \
  --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv
 
 # view this file
-qiime tools view $PWD/DADA2/table-SpSedSw.min5.1500.qzv
+qiime tools view $PWD/DADA2/table-SpSedSw.1500.qzv
 
 # Number of samples	265
 # Number of features	38,216
@@ -217,79 +196,6 @@ qiime tools view $PWD/DADA2/table-SpSedSw.min5.1500.qzv
 # Maximum frequency	78,482.0
 # Mean frequency	88.2486393133766
 
-qiime tools view $PWD/DADA2/table-SpSedSw.min3.1500.qzv
-
-# Number of samples	265
-# Number of features	42,746
-# Total frequency	3,388,448
-
-# Frequency per sample
-# Minimum frequency	2,696.0
-# 1st quartile		7,784.0
-# Median frequency	11,241.0
-# 3rd quartile		15,647.0
-# Maximum frequency	114,165.0
-# Mean frequency	12,786.596226415095
-
-# Frequency per feature
-# Minimum frequency	3.0
-# 1st quartile		7.0
-# Median frequency	14.0
-# 3rd quartile		31.0
-# Maximum frequency	78,482.0
-# Mean frequency	79.26935853647124
-
-
-## Sponge, SW and SED specific files ##
-
-qiime feature-table filter-samples \
- --i-table $PWD/DADA2/table.qza \
- --m-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv \
- --p-where "SampleType='Sponge'" \
- --o-filtered-table $PWD/DADA2/table-Sponge.qza \
-&& \
-qiime feature-table summarize \
- --i-table $PWD/DADA2/table-Sponge.qza \
- --o-visualization $PWD/DADA2/table-Sponge.qzv \
- --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv \
-&& \
-qiime tools view $PWD/DADA2/table-Sponge.qzv
-
-
-
-qiime feature-table filter-samples \
- --i-table $PWD/DADA2/table.qza \
- --m-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv \
- --p-where "SampleType='Sediment'" \
- --o-filtered-table $PWD/DADA2/table-Sediment.qza \
-&& \
-qiime feature-table summarize \
- --i-table $PWD/DADA2/table-Sediment.qza \
- --o-visualization $PWD/DADA2/table-Sediment.qzv \
- --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv \
-&& \
-qiime tools view $PWD/DADA2/table-Sediment.qzv
-
-
-
-qiime feature-table filter-samples \
- --i-table $PWD/DADA2/table.qza \
- --m-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv \
- --p-where "SampleType='Seawater'" \
- --o-filtered-table $PWD/DADA2/table-Seawater.qza \
-&& \
-qiime feature-table summarize \
- --i-table $PWD/DADA2/table-Seawater.qza \
- --o-visualization $PWD/DADA2/table-Seawater.qzv \
- --m-sample-metadata-file $PWD/2_qiime2_files/metadata.v4.tsv \
-&& \
-qiime tools view $PWD/DADA2/table-Seawater.qzv
-
-
-## Intermediate step here ##
-
-# curate your metadata!
-# you will need it soon!
 
 ## Step 5 - phylogenetic tree ##
 # https://docs.qiime2.org/2018.8/tutorials/moving-pictures/#generate-a-tree-for-phylogenetic-diversity-analyses
