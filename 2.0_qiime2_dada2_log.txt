@@ -15,13 +15,20 @@ qiime tools import \
  --output-path $PWD/DADA2/paired-end-demux.qza \
  --input-format PairedEndFastqManifestPhred33
 
+# sequence quality control
+qiime demux summarize \
+  --i-data $PWD/DADA2/paired-end-demux.qza \
+  --o-visualization $PWD/DADA2/paired-end-demux.qzv
+
+qiime tools view $PWD/DADA2/denoising-stats.qzv
+
 # DADA2 denoising -> create DADA2 ASVs
 # https://docs.qiime2.org/2019.1/tutorials/atacama-soils/
 # https://forum.qiime2.org/t/dada2-truncation-lengths-and-features-number/1940/9
 qiime dada2 denoise-paired \
  --i-demultiplexed-seqs $PWD/DADA2/paired-end-demux.qza \
- --p-trim-left-f 10 \
- --p-trim-left-r 10 \
+ --p-trim-left-f 0 \
+ --p-trim-left-r 0 \
  --p-trunc-len-f 280 \
  --p-trunc-len-r 250 \
  --p-n-threads 0 \
