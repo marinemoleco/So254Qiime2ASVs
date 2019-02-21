@@ -5,7 +5,7 @@ Folders contain files necessary or derived from the commands and scripts mention
 log file and folder numbers imply their order in this "pipeline"
 
 ### Update 21.02.2019
-- minor edits *2.0_qiime2_dada2_log.txt*
+- minor edits in *2.0_qiime2_dada2_log.txt*
 
 ### Update 18.02.2019
 - added *--p-confidence 0.8* to *classify-sklearn*
