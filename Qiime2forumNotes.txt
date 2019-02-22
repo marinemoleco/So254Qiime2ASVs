@@ -1,2 +1,5 @@
 DADA2, truncation lengths and features number
 https://forum.qiime2.org/t/dada2-truncation-lengths-and-features-number/1940
+
+Too many singletons after Dada2 with paired-end reads
+https://forum.qiime2.org/t/too-many-singletons-after-dada2-with-paired-end-reads/7718
