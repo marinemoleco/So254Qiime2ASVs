@@ -6,6 +6,8 @@ https://forum.qiime2.org/t/dada2-truncation-lengths-and-features-number/1940
 
 https://forum.qiime2.org/t/too-many-singletons-after-dada2-with-paired-end-reads/7718
 
+> ... previous forum posts say that some singletons may be expected when running paired-end data because Dada2 only removes singleton reads before merging, and the merging process can actually create some singletons.
+
 > My suspicion is that because of the way DADA2 handles chimeras, by running each set of time points separately, you’re getting different sequences that survive chimera handling stochastically. It may be that if you denoise your data together, or use a secondary chimera handling approach (don’t use the built-in chimera handling in DADA2, and then use vsearch), you get fewer singletons because more sequences will survive the chimera filtering.
 
 > We went back and were a little more aggressive with truncating and trimming this time, and I think it helped a little. We still have lots of singletons (and we haven’t combined any time points yet), but we figured that if they ARE noise/errors, they won’t match to anything when we do the taxonomy strings, and many of them might land in the “unassigned” category. We plan to filter out the “unassigned” taxa strings anyway, so we’d be getting rid of them eventually.
