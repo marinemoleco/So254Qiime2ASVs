@@ -15,8 +15,6 @@ https://forum.qiime2.org/t/too-many-singletons-after-dada2-with-paired-end-reads
 
 https://forum.qiime2.org/t/dada2-90-read-drop-after-filering-and-merging/6071
 
-*(hint: look at the plots & compare these results with the statement below)*
-
 > Unfortunately looking at your reverse primers, the quality seems to drop rather early which in my opinion will make it harder to merge properly. In that case I think using the forward reads only (which seem to be in much better shape anyways) would be your best bet.
 
 > Deblur works on one direction of reads only, meaning you can provide it paired-end reads but it will simply ignore the reverse reads. If you merge the forward and reverse reads prior to deblur, let’s say with q2-vsearch, it will denoise the full length. I should mention however that in this method the high quality scores of the overlap regions (as produced by consensus methods) are wasted since deblur doesn’t use those scores, instead uses its own error model which assumes that the quality scores continuously reduce as the length increases.
